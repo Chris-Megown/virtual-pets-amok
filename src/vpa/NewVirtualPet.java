@@ -3,33 +3,33 @@ package vpa;
 public class NewVirtualPet {
 
 	String petName;
-	String description;
+	String type;
 	int hunger = 25;
 	int thirst = 25;
-	int boredom = 25;
+	int happiness = 25;
 
-	public NewVirtualPet(String petName, String description, int hunger, int thirst, int boredom) {
+	public NewVirtualPet(String petName, String type, int hunger, int thirst, int happiness) {
 		this.petName = petName;
-		this.description = description;
+		this.type = type;
 		this.hunger = hunger;
 		this.thirst = thirst;
-		this.boredom = boredom;
+		this.happiness = happiness;
 	}
 
-	public NewVirtualPet(String petName, String description) {
+	public NewVirtualPet(String petName, String type) {
 		this.petName = petName;
-		this.description = description;
+		this.type = type;
 		hunger = 25;
 		thirst = 25;
-		boredom = 25;
+		happiness = 25;
 	}
 
 	public String getName() {
 		return petName;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getType() {
+		return type;
 	}
 
 	public int getHunger() {
@@ -40,8 +40,8 @@ public class NewVirtualPet {
 		return thirst;
 	}
 
-	public int getBoredom() {
-		return boredom;
+	public int getHappiness() {
+		return happiness;
 	}
 
 	boolean petIsDed() {
@@ -57,12 +57,12 @@ public class NewVirtualPet {
 	}
 
 	void fetch() {
-		boredom += 6;
+		happiness += 6;
 	}
 
 	void tick() {
 		hunger -= 1;
 		thirst -= 1;
-		boredom -= 2;
+		happiness -= 2;
 	}
 }

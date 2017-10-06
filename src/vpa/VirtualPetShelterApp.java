@@ -35,11 +35,11 @@ public class VirtualPetShelterApp {
 					}
 
 				}
-				for (NewVirtualPet maybeBoredPet : petShelter.allPets()) {
+				for (NewVirtualPet maybeUnhappyPet : petShelter.allPets()) {
 
-					if (maybeBoredPet.getBoredom() < 5) {
+					if (maybeUnhappyPet.getHappiness() < 5) {
 						System.out
-								.println("You should really consider playing with " + maybeBoredPet.getName() + ".\n");
+								.println("You should really consider playing with " + maybeUnhappyPet.getName() + ".\n");
 					}
 				}
 				System.out.println("This is the status of your current pets:");
@@ -48,7 +48,7 @@ public class VirtualPetShelterApp {
 				System.out.println("------------------------------------------");
 				for (NewVirtualPet currentPet : petShelter.allPets()) {
 					System.out.println(currentPet.getName() + "\t\t" + "|  " + currentPet.getHunger() + "\t" + "|  "
-							+ currentPet.getThirst() + "\t" + "|  " + currentPet.getBoredom());
+							+ currentPet.getThirst() + "\t" + "|  " + currentPet.getHappiness());
 					System.out.println("------------------------------------------");
 
 				}
@@ -84,7 +84,7 @@ public class VirtualPetShelterApp {
 				System.out.println("--------------------------");
 				for (NewVirtualPet currentPet : petShelter.allPets()) {
 
-					System.out.println(currentPet.getName() + "\t" + "  |  " + currentPet.getDescription());
+					System.out.println(currentPet.getName() + "\t" + "  |  " + currentPet.getType());
 					System.out.println("--------------------------");
 				}
 				System.out.print("\nWhich pet would you like to play with: ");
@@ -99,7 +99,7 @@ public class VirtualPetShelterApp {
 			case "4":
 				System.out.println("Which pet would you like to adopt? Enter their name and kind of pet below.");
 				for (NewVirtualPet currentPet : petShelter.allPets()) {
-					System.out.println(currentPet.getName() + ", " + currentPet.getDescription());
+					System.out.println(currentPet.getName() + ", " + currentPet.getType());
 				}
 				String adoptablePet = input.next();
 				adoptablePet = adoptablePet.substring(0, 1).toUpperCase() + adoptablePet.substring(1).toLowerCase();
