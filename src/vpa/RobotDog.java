@@ -1,6 +1,6 @@
 package vpa;
 
-public class RobotDog extends Dog {
+public class RobotDog extends Dog implements Robot {
 
 	public RobotDog(String robotDogName, String robotDogDescription ) {
 	}

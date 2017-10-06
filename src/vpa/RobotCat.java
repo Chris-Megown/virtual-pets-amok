@@ -1,9 +1,8 @@
 package vpa;
 
-public class RobotCat extends Cat {
+public class RobotCat extends Cat implements Robot {
 
 	public RobotCat(String robotCatName, String robotCatDescription) {
-		// TODO Auto-generated constructor stub
 	}
 
 }

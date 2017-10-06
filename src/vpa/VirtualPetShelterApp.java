@@ -1,4 +1,5 @@
 package vpa;
+
 import java.util.Scanner;
 
 public class VirtualPetShelterApp {
@@ -38,8 +39,8 @@ public class VirtualPetShelterApp {
 				for (NewVirtualPet maybeUnhappyPet : petShelter.allPets()) {
 
 					if (maybeUnhappyPet.getHappiness() < 5) {
-						System.out
-								.println("You should really consider playing with " + maybeUnhappyPet.getName() + ".\n");
+						System.out.println(
+								"You should really consider playing with " + maybeUnhappyPet.getName() + ".\n");
 					}
 				}
 				System.out.println("This is the status of your current pets:");

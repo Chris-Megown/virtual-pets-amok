@@ -6,12 +6,12 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class _01_TestingBasic {
+public class TestingBasicProcedures {
 
 	@Test
 
 	public void shouldMakeAVirtualPet() {
-		
+
 		NewVirtualPet underTest = new NewVirtualPet(null, null, 0, 0, 0);
 
 		assertNotNull(underTest);
@@ -38,36 +38,36 @@ public class _01_TestingBasic {
 		assertEquals("You walked your OrganicDog!", walking);
 
 	}
-	
+
 	@Test
-	
+
 	public void shouldMakeARobotDog() {
-		
+
 		RobotDog underTest = new RobotDog(null, null);
-		
+
 		assertNotNull(underTest);
-		
+
 	}
-	
+
 	@Test
-	
+
 	public void shouldMakeRobotDogExtendsDog() {
-		
+
 		Dog underTest = new RobotDog(null, null);
-		
+
 		assertNotNull(underTest);
-		
+
 	}
-	
+
 	@Test
-	
+
 	public void shouldMakeOrganicDogExtendsDog() {
-		
+
 		Dog underTest = new OrganicDog(null, null);
-		
+
 		assertNotNull(underTest);
 	}
-	
+
 	@Test
 
 	public void shouldMakeAnOrganicCat() {
@@ -78,35 +78,33 @@ public class _01_TestingBasic {
 
 	}
 
-	
 	@Test
-	
+
 	public void shouldMakeARobotCat() {
-		
+
 		RobotCat underTest = new RobotCat(null, null);
-		
+
 		assertNotNull(underTest);
-		
+
 	}
-	
+
 	@Test
-	
+
 	public void shouldMakeRobotCatExtendsCat() {
-		
+
 		Cat underTest = new RobotCat(null, null);
-		
+
 		assertNotNull(underTest);
-		
+
 	}
-	
+
 	@Test
-	
+
 	public void shouldMakeOrganicCatExtendsCat() {
-		
+
 		Cat underTest = new OrganicCat(null, null);
-		
+
 		assertNotNull(underTest);
 	}
-	
-	
+
 }
