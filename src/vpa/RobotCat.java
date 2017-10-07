@@ -7,7 +7,6 @@ public class RobotCat extends Cat implements Robot {
 
 	@Override
 	public void oil() {
-		// TODO Auto-generated method stub
 		
 	}
 

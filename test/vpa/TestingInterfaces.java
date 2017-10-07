@@ -74,4 +74,14 @@ public class TestingInterfaces {
 
 	}
 
+	@Test
+	public void shouldMonitorMaintenanceLevelOfRobotDog() {
+
+		RobotDog underTest = new RobotDog(null, null);
+
+		int result = underTest.oil();
+		
+		Assert.assertEquals(5, result);
+	}
+
 }

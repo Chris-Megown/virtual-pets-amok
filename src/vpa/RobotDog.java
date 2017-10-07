@@ -4,11 +4,11 @@ public class RobotDog extends Dog implements Robot {
 
 	public RobotDog(String robotDogName, String robotDogDescription ) {
 	}
-
+	
+	int maintenanceLevel = 0;
 	@Override
-	public void oil() {
-		// TODO Auto-generated method stub
-		
+	public int oil() {
+		return maintenanceLevel+= 5;
 	}
 
 }
