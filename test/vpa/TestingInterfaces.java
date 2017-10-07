@@ -9,14 +9,6 @@ public class TestingInterfaces {
 
 	@Test
 
-	public void shouldCreateRobotInterface() {
-
-		Robot underTest;
-
-	}
-
-	@Test
-
 	public void shouldImplementRobotToRobotDog() {
 
 		Robot underTest = new RobotDog(null, null);
@@ -48,14 +40,6 @@ public class TestingInterfaces {
 
 	@Test
 
-	public void shouldCreateOrganicInterface() {
-
-		Organic underTest;
-
-	}
-
-	@Test
-
 	public void shouldImplementOrganicToOrganicDog() {
 
 		Robot underTest = new RobotDog(null, null);
@@ -80,8 +64,62 @@ public class TestingInterfaces {
 		RobotDog underTest = new RobotDog(null, null);
 
 		int result = underTest.oil();
-		
+
 		Assert.assertEquals(5, result);
+	}
+
+	@Test
+	public void shouldMonitorMaintenanceLevelOfRobotCat() {
+
+		RobotCat underTest = new RobotCat(null, null);
+
+		int result = underTest.oil();
+
+		Assert.assertEquals(5, result);
+	}
+
+	@Test
+	public void shouldFeedOrganicDog() {
+
+		OrganicDog underTest = new OrganicDog(null, null);
+
+		int result = underTest.feed();
+
+		Assert.assertEquals(10, result);
+
+	}
+
+	@Test
+	public void shouldFeedOrganicCat() {
+
+		OrganicCat underTest = new OrganicCat(null, null);
+
+		int result = underTest.feed();
+
+		Assert.assertEquals(10, result);
+
+	}
+
+	@Test
+	public void shouldWaterOrganicCat() {
+
+		OrganicCat underTest = new OrganicCat(null, null);
+
+		int result = underTest.water();
+
+		Assert.assertEquals(10, result);
+
+	}
+
+	@Test
+	public void shouldWaterOrganicDog() {
+
+		OrganicDog underTest = new OrganicDog(null, null);
+
+		int result = underTest.water();
+
+		Assert.assertEquals(10, result);
+
 	}
 
 }

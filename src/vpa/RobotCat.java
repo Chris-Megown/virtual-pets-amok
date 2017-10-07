@@ -5,9 +5,12 @@ public class RobotCat extends Cat implements Robot {
 	public RobotCat(String robotCatName, String robotCatDescription) {
 	}
 
+	int maintenanceLevel = 0;
+
 	@Override
-	public void oil() {
-		
+	public int oil() {
+		return maintenanceLevel += 5;
+
 	}
 
 }

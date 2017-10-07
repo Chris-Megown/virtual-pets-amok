@@ -6,6 +6,7 @@ public class RobotDog extends Dog implements Robot {
 	}
 	
 	int maintenanceLevel = 0;
+	
 	@Override
 	public int oil() {
 		return maintenanceLevel+= 5;
