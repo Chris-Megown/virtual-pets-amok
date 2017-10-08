@@ -4,9 +4,9 @@ public class NewVirtualPet {
 
 	String petName;
 	String type;
-	int hunger = 25;
-	int thirst = 25;
-	int happiness = 25;
+	int hunger = 0;
+	int thirst = 0;
+	int happiness = 0;
 
 	public NewVirtualPet(String petName, String type, int hunger, int thirst, int happiness) {
 		this.petName = petName;
@@ -49,20 +49,20 @@ public class NewVirtualPet {
 	}
 
 	void feed() {
-		hunger += 5;
+		hunger += 10;
 	}
 
 	void water() {
-		thirst += 5;
+		thirst += 10;
 	}
 
 	void fetch() {
-		happiness += 6;
+		happiness += 10;
 	}
 
 	void tick() {
 		hunger -= 1;
 		thirst -= 1;
-		happiness -= 2;
+		happiness -= 1;
 	}
 }

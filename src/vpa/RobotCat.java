@@ -2,7 +2,7 @@ package vpa;
 
 public class RobotCat extends Cat implements Robot {
 
-	public RobotCat(String robotCatName, String robotCatDescription) {
+	public RobotCat(String robotCatName, String robotCatType) {
 	}
 
 	int maintenanceLevel = 0;

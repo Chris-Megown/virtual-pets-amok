@@ -1,12 +1,10 @@
 package vpa;
 
-public class Dog {
+public abstract class Dog {
 
 	public Dog() {
 	}
 
-	public String walk() {
-		return "You walked your Dog!";
-	}
+	public abstract int walk();
 
 }

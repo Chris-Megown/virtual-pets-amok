@@ -28,13 +28,13 @@ public class TestingBasicProcedures {
 
 	@Test
 
-	public void shouldBeAbleToWalkDog() {
+	public void shouldBeAbleToWalkOrganicDog() {
 
-		Dog underTest = new Dog();
+		Dog underTest = new OrganicDog(null, null);
 
-		String walking = underTest.walk();
+		int walking = underTest.walk();
 
-		assertEquals("You walked your Dog!", walking);
+		assertEquals(10, walking);
 
 	}
 

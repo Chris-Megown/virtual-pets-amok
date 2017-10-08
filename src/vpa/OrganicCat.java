@@ -2,7 +2,7 @@ package vpa;
 
 public class OrganicCat extends Cat implements Organic {
 
-	public OrganicCat(String organicCatName, String organicCatDescription) {
+	public OrganicCat(String organicCatName, String organicCatType) {
 	}
 	
 	int hunger = 0;
@@ -15,6 +15,6 @@ public class OrganicCat extends Cat implements Organic {
 	
 	@Override
 	public int water() {
-		return thirst =+ 10;
+		return thirst = +10;
 	}
 }
