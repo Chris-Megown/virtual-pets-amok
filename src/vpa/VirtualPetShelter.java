@@ -6,8 +6,6 @@ import java.util.Map;
 
 public class VirtualPetShelter {
 
-	String petName;
-
 	Map<String, OrganicDog> orgDogShelter = new HashMap<String, OrganicDog>();
 
 	public void addOrganicDog(OrganicDog dog) {
