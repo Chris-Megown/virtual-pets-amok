@@ -2,6 +2,6 @@ package vpa;
 
 public interface Robot {
 
-	int oil();
+	abstract void oil();
 
 }

@@ -1,10 +1,13 @@
 package vpa;
 
-public abstract class Dog {
+public class Dog extends NewVirtualPet {
 
-	public Dog() {
+	public Dog(String petName, String petType) {
+		super(petName, petType);
 	}
 
-	public abstract int walk();
+	public void walk() {
+	}
+	
 
 }

@@ -1,19 +1,23 @@
 package vpa;
 
-public class NewVirtualPet {
+public abstract class NewVirtualPet {
 
 	String petName;
 	String type;
 	int hunger = 0;
 	int thirst = 0;
+	int health = 0;
 	int happiness = 0;
+	int maintenanceLevel =0;
 
-	public NewVirtualPet(String petName, String type, int hunger, int thirst, int happiness) {
+	public NewVirtualPet(String petName, String type, int hunger, int thirst, int health, int happiness, int maintenanceLevel) {
 		this.petName = petName;
 		this.type = type;
 		this.hunger = hunger;
 		this.thirst = thirst;
+		this.health = health;
 		this.happiness = happiness;
+		this.maintenanceLevel = maintenanceLevel;
 	}
 
 	public NewVirtualPet(String petName, String type) {

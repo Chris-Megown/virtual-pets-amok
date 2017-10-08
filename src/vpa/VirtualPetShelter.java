@@ -8,41 +8,45 @@ public class VirtualPetShelter {
 
 	String petName;
 
-	Map<String, NewVirtualPet> myShelter = new HashMap<String, NewVirtualPet>();
+	Map<String, OrganicDog> orgDogShelter = new HashMap<String, OrganicDog>();
 
-	public NewVirtualPet whichPet(String name) {
-		return myShelter.get(name);
+	public void addOrganicDog(OrganicDog dog) {
+		orgDogShelter.put(dog.getName().toLowerCase(), dog);
 	}
 
-	public Collection<NewVirtualPet> allPets() {
-		return myShelter.values();
+	Map<String, OrganicCat> orgCatShelter = new HashMap<String, OrganicCat>();
+
+	public void addOrganicCat(OrganicCat cat) {
+		orgCatShelter.put(cat.getName().toLowerCase(), cat);
 	}
 
-	public String getName(String petName) {
-		return petName;
+	Map<String, RobotDog> robDogShelter = new HashMap<String, RobotDog>();
+
+	public void addRobotDog(RobotDog dog) {
+		robDogShelter.put(dog.getName().toLowerCase(), dog);
 	}
 
-	public void addPet(NewVirtualPet newPet) {
-		myShelter.put(newPet.getName(), newPet);
+	Map<String, RobotCat> robCatShelter = new HashMap<String, RobotCat>();
+
+	public void addRobotCat(RobotCat cat) {
+		robCatShelter.put(cat.getName().toLowerCase(), cat);
 	}
 
-	public void removePet(String adoptedPet) {
-		myShelter.remove(adoptedPet);
-	}
-
-	public void playWithAPet(NewVirtualPet playfulPet) {
-		playfulPet.fetch();
-	}
-
-	public void feedAllPets() {
-		for (NewVirtualPet petToFeed : myShelter.values()) {
-			petToFeed.feed();
+	public void feedAllOrganicPets() {
+		for (OrganicDog dogToFeed : orgDogShelter.values()) {
+			dogToFeed.feed();
+		}
+		for (OrganicCat catToFeed : orgCatShelter.values()) {
+			catToFeed.feed();
 		}
 	}
 
 	public void waterAllPets() {
-		for (NewVirtualPet watering : myShelter.values()) {
-			watering.water();
+		for (OrganicDog dogToWater : orgDogShelter.values()) {
+			dogToWater.feed();
+		}
+		for (OrganicCat catToWater : orgCatShelter.values()) {
+			catToWater.feed();
 		}
 	}
 
@@ -52,8 +56,6 @@ public class VirtualPetShelter {
 		}
 	}
 
-	public void anyPetsDead(NewVirtualPet checkPet) {
-		checkPet.petIsDed();
-	}
+	
 
 }

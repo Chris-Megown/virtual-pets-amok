@@ -2,33 +2,35 @@ package vpa;
 
 public class OrganicDog extends Dog implements Organic {
 
-	public OrganicDog(String organicDogName, String organicDogType) {
+	public OrganicDog(String petName, String petType) {
+		super(petName, petType);
+
 	}
+
 
 	int hunger = 0;
 	int thirst = 0;
-	int cageIsClean = 0;
 	int happiness = 0;
+	int cleanliness = 0;
 
 	@Override
-	public int feed() {
-		return hunger += 10;
+	public void feed() {
+		hunger += 10;
 	}
 
 	@Override
-	public int water() {
-		return thirst = +10;
+	public void water() {
+		thirst = +10;
 	}
 
 	public int cleanDogCage() {
-		int cageIsClean = 0;
-		return cageIsClean;
+		return 0;
 	}
 
 	@Override
-	public int walk() {
-		
-		return happiness += 10;
+	public void walk() {
+		happiness += 10;
+		cleanliness = 0;
 	}
 
 }

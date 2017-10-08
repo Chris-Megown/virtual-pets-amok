@@ -7,9 +7,9 @@ public class VirtualPetShelterApp {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		VirtualPetShelter petShelter = new VirtualPetShelter();
-		NewVirtualPet billy = new NewVirtualPet("Billy", "Dog", 40, 40, 40);
-		NewVirtualPet stuart = new NewVirtualPet("Stuart", "Dog", 20, 20, 20);
-		NewVirtualPet wanda = new NewVirtualPet("Wanda", "Cat", 30, 30, 30);
+		NewVirtualPet billy = new OrganicDog("Billy", "Dog", 40, 40, 40, 40, 0);
+		NewVirtualPet stuart = new RobotDog("Stuart", "Dog", 20, 20, 20, 20, 0);
+		NewVirtualPet wanda = new OrganicCat("Wanda", "Cat", 30, 30, 30, 30, 0);
 		petShelter.addPet(billy);
 		petShelter.addPet(stuart);
 		petShelter.addPet(wanda);

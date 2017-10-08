@@ -3,7 +3,7 @@ package vpa;
 public interface Organic {
 
 	
-	abstract int feed();
+	abstract void feed();
 
-	abstract int water();
+	abstract void water();
 }
