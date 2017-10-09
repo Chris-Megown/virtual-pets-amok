@@ -96,24 +96,23 @@ public class VirtualPetShelter {
 		}
 	}
 
-	// public void checkForDead() {
-	// for (NewVirtualPet maybeDeadPet : myShelter.availablePets()) {
-	// if (maybeDeadPet instanceof Organic) {
-	// Organic organicPet = (Organic) maybeDeadPet;
-	// organicPet.get();
-	// }
-	// System.out.println(maybeDeadPet.getPetName() + " has died of starvation," + "
-	// we are bad at our jobs...\n");
-	// myShelter.removePet(maybeDeadPet.getPetName());
-	// break;
-	// }
-	// if (maybeDeadPet.getThirst() <= 0) {
-	// System.out
-	// .println(maybeDeadPet.getPetName() + " has died of dehydration," + " we are
-	// bad at our jobs...\n");
-	// myShelter.removePet(maybeDeadPet.getPetName());
-	// break;
-	// }
-	//
-	// }
+//	 public void checkForDead() {
+//	 for (NewVirtualPet maybeDeadPet : myShelter.availablePets()) {
+//	 if (maybeDeadPet.getHealth()<=0) {
+//	 myShelter.remove(maybeDeadPet.getPetName());
+//	 }
+//	 System.out.println(maybeDeadPet.getPetName() + " has died of starvation," + "
+//	 we are bad at our jobs...\n");
+//	 myShelter.removePet(maybeDeadPet.getPetName());
+//	 break;
+//	 }
+//	 if (maybeDeadPet.getThirst() <= 0) {
+//	 System.out
+//	 .println(maybeDeadPet.getPetName() + " has died of dehydration," + " we are
+//	 bad at our jobs...\n");
+//	 myShelter.removePet(maybeDeadPet.getPetName());
+//	 break;
+//	 }
+//	//
+//	// }
 }

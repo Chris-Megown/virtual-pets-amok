@@ -38,7 +38,7 @@ public class VirtualPetShelterApp {
 					}
 				}
 
-				System.out.println("\n");
+				System.out.println("");
 				System.out.println("\t1. Feed all of the organic pets");
 				System.out.println("\t2. Water all of the organic pets");
 				System.out.println("\t3. Clean all of the dog cages");
@@ -90,14 +90,15 @@ public class VirtualPetShelterApp {
 					System.out.println("Name\t\t|Type");
 					System.out.println("------------------------------");
 					for (NewVirtualPet currentPet : petShelter.availablePets()) {
-						System.out.println(currentPet.getPetName() + "\t\t" + "|  " + currentPet.getClass().getSimpleName());
+						System.out.println(
+								currentPet.getPetName() + "\t\t" + "|  " + currentPet.getClass().getSimpleName());
 						System.out.println("------------------------------");
 					}
 					System.out.println("Please provide the name of the pet that will be adopted: ");
 					String adoptablePet = input.next();
 					adoptablePet = adoptablePet.substring(0, 1).toUpperCase() + adoptablePet.substring(1).toLowerCase();
 					petShelter.removePet(adoptablePet);
-					System.out.println(adoptablePet + " has been adopted");
+					System.out.println(adoptablePet + " has been adopted!");
 					petShelter.tickAllPets();
 					break;
 				case "8":
@@ -138,8 +139,9 @@ public class VirtualPetShelterApp {
 					System.out.println("Name\t\t|Type\t\t|Health\t|Happiness");
 					System.out.println("-----------------------------------------------");
 					for (NewVirtualPet currentPet : petShelter.availablePets()) {
-						System.out.println(currentPet.getPetName() + "\t\t" + "|  " + currentPet.getClass().getSimpleName() + "\t" + "|  "
-								+ currentPet.getHealth() + "\t" + "|  " + currentPet.getHappiness());
+						System.out.println(
+								currentPet.getPetName() + "\t\t" + "|  " + currentPet.getClass().getSimpleName() + "\t"
+										+ "|  " + currentPet.getHealth() + "\t" + "|  " + currentPet.getHappiness());
 						System.out.println("-----------------------------------------------");
 					}
 					break;

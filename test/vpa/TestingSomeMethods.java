@@ -30,4 +30,16 @@ public class TestingSomeMethods {
 		
 		assertEquals(0, result);
 	}
+	
+	@Test
+	public void shouldCleanAllDogCages() {
+		
+		OrganicDog underTest = new OrganicDog(null, 0, 0, 0, 0, 5);
+		
+		underTest.cleanDogCage();
+		
+		int result = underTest.getCleanliness();
+		
+		assertEquals(0, result);		
+	}
 }
