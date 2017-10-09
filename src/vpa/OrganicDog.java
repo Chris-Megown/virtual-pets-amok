@@ -8,7 +8,7 @@ public class OrganicDog extends Dog implements Organic {
 
 	}
 	
-	int hunger = 0;
+	int hunger;
 	int thirst = 0;
 	int cleanliness = 0;
 	

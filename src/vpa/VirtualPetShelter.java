@@ -11,7 +11,7 @@ public class VirtualPetShelter {
 	public Collection<NewVirtualPet> availablePets() {
 		return myShelter.values();
 	}
-	
+
 	public NewVirtualPet whichPet(String name) {
 		return myShelter.get(name);
 	}
@@ -44,6 +44,7 @@ public class VirtualPetShelter {
 		}
 
 	}
+
 	public void cleanAllDogCages() {
 		for (NewVirtualPet pet : availablePets()) {
 			if (pet instanceof OrganicDog) {
@@ -53,7 +54,7 @@ public class VirtualPetShelter {
 		}
 
 	}
-	
+
 	public void cleanTheLitterBox() {
 		for (NewVirtualPet pet : availablePets()) {
 			if (pet instanceof OrganicCat) {
@@ -73,7 +74,7 @@ public class VirtualPetShelter {
 		}
 
 	}
-	
+
 	public void walkEveryDog() {
 		for (NewVirtualPet pet : availablePets()) {
 			if (pet instanceof Dog) {
@@ -96,23 +97,22 @@ public class VirtualPetShelter {
 		}
 	}
 
-//	 public void checkForDead() {
-//	 for (NewVirtualPet maybeDeadPet : myShelter.availablePets()) {
-//	 if (maybeDeadPet.getHealth()<=0) {
-//	 myShelter.remove(maybeDeadPet.getPetName());
-//	 }
-//	 System.out.println(maybeDeadPet.getPetName() + " has died of starvation," + "
-//	 we are bad at our jobs...\n");
-//	 myShelter.removePet(maybeDeadPet.getPetName());
-//	 break;
-//	 }
-//	 if (maybeDeadPet.getThirst() <= 0) {
-//	 System.out
-//	 .println(maybeDeadPet.getPetName() + " has died of dehydration," + " we are
-//	 bad at our jobs...\n");
-//	 myShelter.removePet(maybeDeadPet.getPetName());
-//	 break;
-//	 }
-//	//
-//	// }
+	public void checkForDead() {
+		for (NewVirtualPet maybeDeadPet : availablePets()) {
+			if (maybeDeadPet.getHealth() <= 0) {
+				myShelter.remove(maybeDeadPet.getPetName());
+			}
+			System.out.println(maybeDeadPet.getPetName() + " has died");
+		}
+	}
+
+	public void checkForUnhappy() {
+		for (NewVirtualPet checkPet : availablePets()) {
+
+			if (checkPet.getHappiness() < 5) {
+				System.out.println("You should really consider playing with " + checkPet.getPetName() + ".\n");
+			}
+		}
+	}
+
 }

@@ -29,14 +29,8 @@ public class VirtualPetShelterApp {
 		while (!petShelter.myShelter.isEmpty()) {
 
 			do {
-
-				for (NewVirtualPet maybeUnhappyPet : petShelter.availablePets()) {
-
-					if (maybeUnhappyPet.getHappiness() < 5) {
-						System.out.println(
-								"You should really consider playing with " + maybeUnhappyPet.getPetName() + ".\n");
-					}
-				}
+				petShelter.checkForDead();
+				petShelter.checkForUnhappy();
 
 				System.out.println("");
 				System.out.println("\t1. Feed all of the organic pets");
@@ -151,13 +145,12 @@ public class VirtualPetShelterApp {
 				default:
 					System.out.println("Invalid option! Try again");
 				}
-			} while (petShelter.myShelter.isEmpty());
 
+			} while (!petShelter.myShelter.isEmpty());
+
+			System.out.println(
+					"All the Petopia animals have either been adopted or have traggically died. Have a wonderful day!");
+			input.close();
 		}
-
-		System.out.println(
-				"All the Petopia animals have either been adopted or have traggically died. Have a wonderful day!");
-		input.close();
 	}
-
 }

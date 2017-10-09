@@ -42,4 +42,17 @@ public class TestingSomeMethods {
 		
 		assertEquals(0, result);		
 	}
+	
+	@Test
+	
+	public void shouldFeedAllPets() {
+		
+		OrganicDog underTest = new OrganicDog(null, 0, 100, 0, 0, 0);
+		
+		underTest.feed();
+		
+		int result = underTest.getHunger();
+		
+		assertEquals(0, result);
+	}
 }
