@@ -2,8 +2,8 @@ package vpa;
 
 public class RobotCat extends Cat implements Robot {
 
-	public RobotCat(String petName, String petType) {
-		super(petName, petType);
+	public RobotCat(String petName, int health) {
+		super(petName, health);
 
 	}
 
@@ -17,6 +17,11 @@ public class RobotCat extends Cat implements Robot {
 
 	public int getMaintenanceLevel() {
 		return maintenanceLevel;
+	}
+
+	@Override
+	public void tick() {
+		maintenanceLevel -=5;
 	}
 
 }

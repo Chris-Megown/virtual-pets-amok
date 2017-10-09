@@ -2,6 +2,8 @@ package vpa;
 
 public interface Robot {
 
-	abstract void oil();
+	void oil();
+
+	void tick();
 
 }

@@ -2,16 +2,19 @@ package vpa;
 
 public class OrganicDog extends Dog implements Organic {
 
-	public OrganicDog(String petName, String petType) {
-		super(petName, petType);
+	
+	public OrganicDog(String petName, int health, int hunger, int thirst, int happiness, int cleanliness) {
+		super(petName, health);
 
 	}
-
+	
+	
 	int hunger = 0;
 	int thirst = 0;
 	int happiness = 0;
-	int cageCleanliness = 0;
-	int timeSinceLastWalk = 0;
+	int cleanliness = 0;
+	
+	
 
 	
 	public int getHunger() {
@@ -26,45 +29,41 @@ public class OrganicDog extends Dog implements Organic {
 		return happiness;
 	}
 
-	public int getCageCleanliness() {
-		return cageCleanliness;
+	public int getCleanliness() {
+		return cleanliness;
 	}
 	
-	public int getTimeSinceLastWalk() {
-		return timeSinceLastWalk;
-	}
 	
 	@Override
 	public void feed() {
 		hunger -= 10;
-		cageCleanliness += 5;
+		cleanliness += 5;
 		health += 5;
 	}
 
 	@Override
 	public void water() {
 		thirst -= 10;
-		cageCleanliness += 5;
+		cleanliness += 5;
 		health += 5;
 	}
 
 	@Override
 	public void walk() {
+		super.walk();
 		happiness += 20;
-		cageCleanliness -= 5;
+		cleanliness -= 5;
 	}
 
 	public void cleanDogCage() {
-		cageCleanliness = 0;
+		cleanliness = 0;
 		happiness += 5;
 	}
-
+	@Override
 	public void tick() {
 		hunger += 5;
 		thirst += 5;
-		happiness -= 5;
-		cageCleanliness += 5;
-		timeSinceLastWalk += 5;
+		cleanliness += 5;
 	}
 	
 }

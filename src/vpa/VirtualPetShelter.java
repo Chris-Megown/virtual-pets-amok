@@ -6,54 +6,50 @@ import java.util.Map;
 
 public class VirtualPetShelter {
 
-	Map<String, OrganicDog> orgDogShelter = new HashMap<String, OrganicDog>();
+	Map<String, NewVirtualPet> myShelter = new HashMap<String, NewVirtualPet>();
 
-	public void addOrganicDog(OrganicDog dog) {
-		orgDogShelter.put(dog.getName().toLowerCase(), dog);
+	public Collection<NewVirtualPet> availablePets() {
+		return myShelter.values();
 	}
 
-	Map<String, OrganicCat> orgCatShelter = new HashMap<String, OrganicCat>();
-
-	public void addOrganicCat(OrganicCat cat) {
-		orgCatShelter.put(cat.getName().toLowerCase(), cat);
+	public void addPet(NewVirtualPet newPet) {
+		String petsAvailable = newPet.getPetName();
+		myShelter.put(petsAvailable, newPet);
 	}
 
-	Map<String, RobotDog> robDogShelter = new HashMap<String, RobotDog>();
-
-	public void addRobotDog(RobotDog dog) {
-		robDogShelter.put(dog.getName().toLowerCase(), dog);
-	}
-
-	Map<String, RobotCat> robCatShelter = new HashMap<String, RobotCat>();
-
-	public void addRobotCat(RobotCat cat) {
-		robCatShelter.put(cat.getName().toLowerCase(), cat);
+	public void removePet(String adoptedPet) {
+		myShelter.remove(adoptedPet);
 	}
 
 	public void feedAllOrganicPets() {
-		for (OrganicDog dogToFeed : orgDogShelter.values()) {
-			dogToFeed.feed();
+		for (NewVirtualPet pet : availablePets()) {
+			if (pet instanceof Organic) {
+				Organic organicPet = (Organic) pet;
+				organicPet.feed();
+			}
 		}
-		for (OrganicCat catToFeed : orgCatShelter.values()) {
-			catToFeed.feed();
-		}
+
 	}
 
-	public void waterAllPets() {
-		for (OrganicDog dogToWater : orgDogShelter.values()) {
-			dogToWater.feed();
+	public void waterAllOrganicPets() {
+		for (NewVirtualPet pet : availablePets()) {
+			if (pet instanceof Organic) {
+				Organic organicPet = (Organic) pet;
+				organicPet.water();
+			}
 		}
-		for (OrganicCat catToWater : orgCatShelter.values()) {
-			catToWater.feed();
-		}
+
 	}
 
-	public void tickAllPets() {
-		for (NewVirtualPet petToTick : myShelter.values()) {
-			petToTick.tick();
+	public void tickAllPets(NewVirtualPet currentPet) {
+		for (NewVirtualPet petToTick : availablePets()) {
+			if (petToTick instanceof Organic) {
+				Organic organicPet = (Organic) petToTick;
+				organicPet.tick();
+			} else if (petToTick instanceof Robot) {
+				Robot robotPet = (Robot) petToTick;
+				robotPet.tick();
+			}
 		}
 	}
-
-	
-
 }

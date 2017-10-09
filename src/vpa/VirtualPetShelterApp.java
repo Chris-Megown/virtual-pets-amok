@@ -7,9 +7,9 @@ public class VirtualPetShelterApp {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		VirtualPetShelter petShelter = new VirtualPetShelter();
-		NewVirtualPet billy = new OrganicDog("Billy", "Dog", 40, 40, 40, 40, 0);
-		NewVirtualPet stuart = new RobotDog("Stuart", "Dog", 20, 20, 20, 20, 0);
-		NewVirtualPet wanda = new OrganicCat("Wanda", "Cat", 30, 30, 30, 30, 0);
+		OrganicDog billy = new OrganicDog("Billy", "Dog", 40, 40, 40, 40, 0);
+		RobotDog stuart = new RobotDog("Stuart", "Dog", 20, 20, 20, 20, 0);
+		OrganicCat wanda = new OrganicCat("Wanda", "Cat", 30, 30, 30, 30, 0);
 		petShelter.addPet(billy);
 		petShelter.addPet(stuart);
 		petShelter.addPet(wanda);
@@ -21,7 +21,7 @@ public class VirtualPetShelterApp {
 		while (!petShelter.myShelter.isEmpty()) {
 
 			do {
-				for (NewVirtualPet maybeDeadPet : petShelter.allPets()) {
+				for (NewVirtualPet maybeDeadPet : petShelter.availablePets()) {
 					if (maybeDeadPet.getHunger() <= 0) {
 						System.out.println(
 								maybeDeadPet.getName() + " has died of starvation," + " we are bad at our jobs...\n");
@@ -63,69 +63,72 @@ public class VirtualPetShelterApp {
 				System.out.print("What would you like to do next: ");
 
 				userChoice = input.next();
-			} while (!userChoice.equals("1") && !userChoice.equals("2") && !userChoice.equals("3")
-					&& !userChoice.equals("4") && !userChoice.equals("5") && !userChoice.equals("6"));
+				
+				switch (userChoice) {
 
-			switch (userChoice) {
+				case "1":
+					petShelter.feedAllPets();
+					System.out.println("\nAll the pets have had their food bowls refilled!\n");
+					petShelter.tickAllPets();
+					break;
+				case "2":
+					petShelter.waterAllPets();
+					System.out.println("\nAll the pets have had their water bowls refilled!\n");
+					petShelter.tickAllPets();
 
-			case "1":
-				petShelter.feedAllPets();
-				System.out.println("\nAll the pets have had their food bowls refilled!\n");
-				petShelter.tickAllPets();
-				break;
-			case "2":
-				petShelter.waterAllPets();
-				System.out.println("\nAll the pets have had their water bowls refilled!\n");
-				petShelter.tickAllPets();
-
-				break;
-			case "3":
-				System.out.println();
-				System.out.println("Name\t  |  Description");
-				System.out.println("--------------------------");
-				for (NewVirtualPet currentPet : petShelter.allPets()) {
-
-					System.out.println(currentPet.getName() + "\t" + "  |  " + currentPet.getType());
+					break;
+				case "3":
+					System.out.println();
+					System.out.println("Name\t  |  Description");
 					System.out.println("--------------------------");
-				}
-				System.out.print("\nWhich pet would you like to play with: ");
+					for (NewVirtualPet currentPet : petShelter.allPets()) {
 
-				String petPlayInput = input.next();
-				petPlayInput = petPlayInput.substring(0, 1).toUpperCase() + petPlayInput.substring(1).toLowerCase();
-				petShelter.whichPet(petPlayInput).fetch();
-				System.out.println("\nYou threw the ball with " + petPlayInput + ", and he liked it.\n");
-				petShelter.tickAllPets();
+						System.out.println(currentPet.getName() + "\t" + "  |  " + currentPet.getType());
+						System.out.println("--------------------------");
+					}
+					System.out.print("\nWhich pet would you like to play with: ");
 
-				break;
-			case "4":
-				System.out.println("Which pet would you like to adopt? Enter their name and kind of pet below.");
-				for (NewVirtualPet currentPet : petShelter.allPets()) {
-					System.out.println(currentPet.getName() + ", " + currentPet.getType());
-				}
-				String adoptablePet = input.next();
-				adoptablePet = adoptablePet.substring(0, 1).toUpperCase() + adoptablePet.substring(1).toLowerCase();
-				petShelter.removePet(adoptablePet);
-				System.out.println("You adopted " + adoptablePet);
-				petShelter.tickAllPets();
-				break;
+					String petPlayInput = input.next();
+					petPlayInput = petPlayInput.substring(0, 1).toUpperCase() + petPlayInput.substring(1).toLowerCase();
+					petShelter.whichPet(petPlayInput).fetch();
+					System.out.println("\nYou threw the ball with " + petPlayInput + ", and he liked it.\n");
+					petShelter.tickAllPets();
 
-			case "5":
-				System.out.println("\nIf you would like to admit an animal here we'll need some information.");
-				System.out.print("\nWhat is the animal's name: ");
-				String newPetName = input.next();
-				newPetName = newPetName.substring(0, 1).toUpperCase() + newPetName.substring(1).toLowerCase();
-				System.out.print("\nWhat kind of animal is this: ");
-				String newPetDescription = input.next();
-				NewVirtualPet foundPet = new NewVirtualPet(newPetName, newPetDescription);
-				petShelter.addPet(foundPet);
-				System.out.println("\nHere at Petopia we will take great care of " + newPetName + ".\n");
-				petShelter.tickAllPets();
-				break;
-			case "6":
-				System.out.println("\nThanks for stopping by and have a nice day.");
-				System.exit(0);
+					break;
+				case "4":
+					System.out.println("Which pet would you like to adopt? Enter their name and kind of pet below.");
+					for (NewVirtualPet currentPet : petShelter.allPets()) {
+						System.out.println(currentPet.getName() + ", " + currentPet.getType());
+					}
+					String adoptablePet = input.next();
+					adoptablePet = adoptablePet.substring(0, 1).toUpperCase() + adoptablePet.substring(1).toLowerCase();
+					petShelter.removePet(adoptablePet);
+					System.out.println("You adopted " + adoptablePet);
+					petShelter.tickAllPets();
+					break;
 
-			}
+				case "5":
+					System.out.println("\nIf you would like to admit an animal here we'll need some information.");
+					System.out.print("\nWhat is the animal's name: ");
+					String newPetName = input.next();
+					newPetName = newPetName.substring(0, 1).toUpperCase() + newPetName.substring(1).toLowerCase();
+					System.out.print("\nWhat kind of animal is this: ");
+					String newPetDescription = input.next();
+					NewVirtualPet foundPet = new NewVirtualPet(newPetName, newPetDescription);
+					petShelter.addPet(foundPet);
+					System.out.println("\nHere at Petopia we will take great care of " + newPetName + ".\n");
+					petShelter.tickAllPets();
+					break;
+				case "6":
+					System.out.println("\nThanks for stopping by and have a nice day.");
+					System.exit(0);
+				default:
+					System.out.println("Invalid option! Try again");
+			} while (petShelter.myShelter.isEmpty());
+
+			
+
+			
 		}
 		System.out.println(
 				"All the Petopia animals have either been adopted or have traggically died. Have a wonderful day!");
