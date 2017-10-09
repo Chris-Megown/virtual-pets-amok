@@ -39,4 +39,9 @@ public class OrganicCat extends Cat implements Organic {
 		thirst += 5;
 		cleanliness += 5;
 	}
+	
+	public void cleanLitterBox() {
+		cleanliness = 0;
+		happiness += 5;
+	}
 }

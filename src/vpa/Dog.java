@@ -7,7 +7,6 @@ public class Dog extends NewVirtualPet {
 	}
 
 	public void walk() {
-		
 	}
 
 	@Override

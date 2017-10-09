@@ -8,30 +8,27 @@ import org.junit.Test;
 public class TestingInterfaces {
 
 	@Test
-
 	public void shouldImplementRobotToRobotDog() {
 
-		Robot underTest = new RobotDog(null, 0);
+		Robot underTest = new RoboticDog(null, 0, 0);
 
 		assertNotNull(underTest);
 
 	}
 
 	@Test
-
 	public void shouldImplementRobotToRobotCat() {
 
-		Robot underTest = new RobotCat(null, 0);
+		Robot underTest = new RoboticCat(null, 0, 0);
 
 		assertNotNull(underTest);
 
 	}
 
 	@Test
-
 	public void shouldOilRobots() {
 
-		Robot underTest = new RobotDog(null, 0);
+		Robot underTest = new RoboticDog(null, 0, 0);
 
 		underTest.oil();
 		assertNotNull(underTest);
@@ -39,20 +36,18 @@ public class TestingInterfaces {
 	}
 
 	@Test
-
 	public void shouldImplementOrganicToOrganicDog() {
 
-		Robot underTest = new RobotDog(null, 0);
+		Robot underTest = new RoboticDog(null, 0, 0);
 
 		assertNotNull(underTest);
 
 	}
 
 	@Test
-
 	public void shouldImplementOrganicToOrganicCat() {
 
-		Robot underTest = new RobotCat(null, 0);
+		Robot underTest = new RoboticCat(null, 0, 0);
 
 		assertNotNull(underTest);
 
@@ -61,7 +56,7 @@ public class TestingInterfaces {
 	@Test
 	public void shouldMonitorMaintenanceLevelOfRobotDog() {
 
-		RobotDog underTest = new RobotDog(null, 0);
+		RoboticDog underTest = new RoboticDog(null, 0, 0);
 
 		underTest.oil();
 
@@ -73,7 +68,7 @@ public class TestingInterfaces {
 	@Test
 	public void shouldMonitorMaintenanceLevelOfRobotCat() {
 
-		RobotCat underTest = new RobotCat(null, 0);
+		RoboticCat underTest = new RoboticCat(null, 0, 0);
 
 		underTest.oil();
 

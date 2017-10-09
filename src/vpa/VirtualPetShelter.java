@@ -53,12 +53,32 @@ public class VirtualPetShelter {
 		}
 
 	}
+	
+	public void cleanTheLitterBox() {
+		for (NewVirtualPet pet : availablePets()) {
+			if (pet instanceof OrganicCat) {
+				OrganicCat organicPet = (OrganicCat) pet;
+				organicPet.cleanLitterBox();
+			}
+		}
+
+	}
 
 	public void oilAllRobotPets() {
 		for (NewVirtualPet pet : availablePets()) {
 			if (pet instanceof Robot) {
 				Robot robotPet = (Robot) pet;
 				robotPet.oil();
+			}
+		}
+
+	}
+	
+	public void walkEveryDog() {
+		for (NewVirtualPet pet : availablePets()) {
+			if (pet instanceof Dog) {
+				Dog dogPet = (Dog) pet;
+				dogPet.walk();
 			}
 		}
 
