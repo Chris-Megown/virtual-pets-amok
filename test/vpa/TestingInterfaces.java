@@ -63,7 +63,9 @@ public class TestingInterfaces {
 
 		RobotDog underTest = new RobotDog(null, null);
 
-		int result = underTest.oil();
+		underTest.oil();
+
+		int result = underTest.getMaintenanceLevel();
 
 		Assert.assertEquals(5, result);
 	}
@@ -73,7 +75,9 @@ public class TestingInterfaces {
 
 		RobotCat underTest = new RobotCat(null, null);
 
-		int result = underTest.oil();
+		underTest.oil();
+
+		int result = underTest.getMaintenanceLevel();
 
 		Assert.assertEquals(5, result);
 	}
@@ -83,9 +87,11 @@ public class TestingInterfaces {
 
 		OrganicDog underTest = new OrganicDog(null, null);
 
-		int result = underTest.feed();
+		underTest.feed();
 
-		Assert.assertEquals(10, result);
+		int result = underTest.getHunger();
+
+		Assert.assertEquals(-10, result);
 
 	}
 
@@ -94,9 +100,11 @@ public class TestingInterfaces {
 
 		OrganicCat underTest = new OrganicCat(null, null);
 
-		int result = underTest.feed();
+		underTest.feed();
 
-		Assert.assertEquals(10, result);
+		int result = underTest.getHunger();
+
+		Assert.assertEquals(-10, result);
 
 	}
 
@@ -105,9 +113,11 @@ public class TestingInterfaces {
 
 		OrganicCat underTest = new OrganicCat(null, null);
 
-		int result = underTest.water();
+		underTest.water();
 
-		Assert.assertEquals(10, result);
+		int result = underTest.getThirst();
+
+		Assert.assertEquals(-10, result);
 
 	}
 
@@ -116,9 +126,11 @@ public class TestingInterfaces {
 
 		OrganicDog underTest = new OrganicDog(null, null);
 
-		int result = underTest.water();
+		underTest.water();
 
-		Assert.assertEquals(10, result);
+		int result = underTest.getThirst();
+
+		Assert.assertEquals(-10, result);
 
 	}
 

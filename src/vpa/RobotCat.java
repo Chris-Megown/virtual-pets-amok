@@ -15,4 +15,8 @@ public class RobotCat extends Cat implements Robot {
 
 	}
 
+	public int getMaintenanceLevel() {
+		return maintenanceLevel;
+	}
+
 }

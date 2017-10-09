@@ -4,12 +4,13 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
+import vpa.NewVirtualPet;
+
 public class TestingBasicProcedures {
 
 	@Test
 
 	public void shouldMakeAVirtualPet() {
-
 
 		// import virtual pet at some point for this BS
 		NewVirtualPet underTest = new NewVirtualPet(null, null);
@@ -33,9 +34,10 @@ public class TestingBasicProcedures {
 		Dog underTest = new OrganicDog(null, null);
 
 		underTest.walk();
-		
+
 		int walking = underTest.getHappiness();
-		assertEquals(10, walking);
+		
+		assertEquals(20, walking);
 
 	}
 
@@ -82,7 +84,7 @@ public class TestingBasicProcedures {
 
 	public void shouldMakeARobotCat() {
 
-		RobotCat underTest = new RobotCat();
+		RobotCat underTest = new RobotCat(null, null);
 
 		assertNotNull(underTest);
 
@@ -92,7 +94,7 @@ public class TestingBasicProcedures {
 
 	public void shouldMakeRobotCatExtendsCat() {
 
-		Cat underTest = new RobotCat();
+		Cat underTest = new RobotCat(null, null);
 
 		assertNotNull(underTest);
 

@@ -11,7 +11,9 @@ public class TestingSomeMethods {
 
 		OrganicDog underTest = new OrganicDog(null, null);
 
-		int result = underTest.cleanDogCage();
+		underTest.cleanDogCage();
+		
+		int result = underTest.getCageCleanliness();
 		
 		Assert.assertEquals(0, result);
 

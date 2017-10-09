@@ -20,4 +20,8 @@ public class RobotDog extends Dog implements Robot {
 		happiness += 10;
 	}
 
+	public int getMaintenanceLevel() {
+		return maintenanceLevel;
+	}
+
 }
