@@ -8,14 +8,9 @@ public class OrganicDog extends Dog implements Organic {
 
 	}
 	
-	
 	int hunger = 0;
 	int thirst = 0;
-	int happiness = 0;
 	int cleanliness = 0;
-	
-	
-
 	
 	public int getHunger() {
 		return hunger;
@@ -25,14 +20,9 @@ public class OrganicDog extends Dog implements Organic {
 		return thirst;
 	}
 
-	public int getHappiness() {
-		return happiness;
-	}
-
 	public int getCleanliness() {
 		return cleanliness;
 	}
-	
 	
 	@Override
 	public void feed() {
@@ -55,15 +45,17 @@ public class OrganicDog extends Dog implements Organic {
 		cleanliness -= 5;
 	}
 
-	public void cleanDogCage() {
-		cleanliness = 0;
-		happiness += 5;
-	}
 	@Override
 	public void tick() {
 		hunger += 5;
 		thirst += 5;
 		cleanliness += 5;
 	}
+	
+	public void cleanDogCage() {
+		cleanliness = 0;
+		happiness += 5;
+	}
+	
 	
 }

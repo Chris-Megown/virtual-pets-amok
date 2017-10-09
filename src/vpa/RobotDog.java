@@ -2,9 +2,8 @@ package vpa;
 
 public class RobotDog extends Dog implements Robot {
 
-	public RobotDog(String petName, int health) {
+	public RobotDog(String petName, int health, int maintenanceLevel) {
 		super(petName, health);
-
 	}
 
 	int maintenanceLevel = 0;

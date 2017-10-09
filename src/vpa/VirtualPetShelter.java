@@ -11,6 +11,10 @@ public class VirtualPetShelter {
 	public Collection<NewVirtualPet> availablePets() {
 		return myShelter.values();
 	}
+	
+	public NewVirtualPet whichPet(String name) {
+		return myShelter.get(name);
+	}
 
 	public void addPet(NewVirtualPet newPet) {
 		String petsAvailable = newPet.getPetName();
@@ -40,8 +44,27 @@ public class VirtualPetShelter {
 		}
 
 	}
+	public void cleanAllDogCages() {
+		for (NewVirtualPet pet : availablePets()) {
+			if (pet instanceof OrganicDog) {
+				OrganicDog organicPet = (OrganicDog) pet;
+				organicPet.cleanDogCage();
+			}
+		}
 
-	public void tickAllPets(NewVirtualPet currentPet) {
+	}
+
+	public void oilAllRobotPets() {
+		for (NewVirtualPet pet : availablePets()) {
+			if (pet instanceof Robot) {
+				Robot robotPet = (Robot) pet;
+				robotPet.oil();
+			}
+		}
+
+	}
+
+	public void tickAllPets() {
 		for (NewVirtualPet petToTick : availablePets()) {
 			if (petToTick instanceof Organic) {
 				Organic organicPet = (Organic) petToTick;
@@ -52,4 +75,25 @@ public class VirtualPetShelter {
 			}
 		}
 	}
+
+	// public void checkForDead() {
+	// for (NewVirtualPet maybeDeadPet : myShelter.availablePets()) {
+	// if (maybeDeadPet instanceof Organic) {
+	// Organic organicPet = (Organic) maybeDeadPet;
+	// organicPet.get();
+	// }
+	// System.out.println(maybeDeadPet.getPetName() + " has died of starvation," + "
+	// we are bad at our jobs...\n");
+	// myShelter.removePet(maybeDeadPet.getPetName());
+	// break;
+	// }
+	// if (maybeDeadPet.getThirst() <= 0) {
+	// System.out
+	// .println(maybeDeadPet.getPetName() + " has died of dehydration," + " we are
+	// bad at our jobs...\n");
+	// myShelter.removePet(maybeDeadPet.getPetName());
+	// break;
+	// }
+	//
+	// }
 }

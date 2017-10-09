@@ -9,11 +9,11 @@ public class TestingSomeMethods {
 
 	public void shouldCleanDogCage() {
 
-		OrganicDog underTest = new OrganicDog(null, null);
+		OrganicDog underTest = new OrganicDog(null, 0, 0, 0, 0, 0);
 
 		underTest.cleanDogCage();
 		
-		int result = underTest.getCageCleanliness();
+		int result = underTest.getCleanliness();
 		
 		Assert.assertEquals(0, result);
 

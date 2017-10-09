@@ -11,7 +11,7 @@ public class TestingInterfaces {
 
 	public void shouldImplementRobotToRobotDog() {
 
-		Robot underTest = new RobotDog(null, null);
+		Robot underTest = new RobotDog(null, 0);
 
 		assertNotNull(underTest);
 
@@ -21,7 +21,7 @@ public class TestingInterfaces {
 
 	public void shouldImplementRobotToRobotCat() {
 
-		Robot underTest = new RobotCat(null, null);
+		Robot underTest = new RobotCat(null, 0);
 
 		assertNotNull(underTest);
 
@@ -31,7 +31,7 @@ public class TestingInterfaces {
 
 	public void shouldOilRobots() {
 
-		Robot underTest = new RobotDog(null, null);
+		Robot underTest = new RobotDog(null, 0);
 
 		underTest.oil();
 		assertNotNull(underTest);
@@ -42,7 +42,7 @@ public class TestingInterfaces {
 
 	public void shouldImplementOrganicToOrganicDog() {
 
-		Robot underTest = new RobotDog(null, null);
+		Robot underTest = new RobotDog(null, 0);
 
 		assertNotNull(underTest);
 
@@ -52,7 +52,7 @@ public class TestingInterfaces {
 
 	public void shouldImplementOrganicToOrganicCat() {
 
-		Robot underTest = new RobotCat(null, null);
+		Robot underTest = new RobotCat(null, 0);
 
 		assertNotNull(underTest);
 
@@ -61,7 +61,7 @@ public class TestingInterfaces {
 	@Test
 	public void shouldMonitorMaintenanceLevelOfRobotDog() {
 
-		RobotDog underTest = new RobotDog(null, null);
+		RobotDog underTest = new RobotDog(null, 0);
 
 		underTest.oil();
 
@@ -73,7 +73,7 @@ public class TestingInterfaces {
 	@Test
 	public void shouldMonitorMaintenanceLevelOfRobotCat() {
 
-		RobotCat underTest = new RobotCat(null, null);
+		RobotCat underTest = new RobotCat(null, 0);
 
 		underTest.oil();
 
@@ -85,7 +85,7 @@ public class TestingInterfaces {
 	@Test
 	public void shouldFeedOrganicDog() {
 
-		OrganicDog underTest = new OrganicDog(null, null);
+		OrganicDog underTest = new OrganicDog(null, 0, 0, 0, 0, 0);
 
 		underTest.feed();
 
@@ -98,7 +98,7 @@ public class TestingInterfaces {
 	@Test
 	public void shouldFeedOrganicCat() {
 
-		OrganicCat underTest = new OrganicCat(null, null);
+		OrganicCat underTest = new OrganicCat(null, 0, 0, 0, 0, 0);
 
 		underTest.feed();
 
@@ -111,7 +111,7 @@ public class TestingInterfaces {
 	@Test
 	public void shouldWaterOrganicCat() {
 
-		OrganicCat underTest = new OrganicCat(null, null);
+		OrganicCat underTest = new OrganicCat(null, 0, 0, 0, 0, 0);
 
 		underTest.water();
 
@@ -124,7 +124,7 @@ public class TestingInterfaces {
 	@Test
 	public void shouldWaterOrganicDog() {
 
-		OrganicDog underTest = new OrganicDog(null, null);
+		OrganicDog underTest = new OrganicDog(null, 0, 0, 0, 0, 0);
 
 		underTest.water();
 

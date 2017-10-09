@@ -4,7 +4,6 @@ public class OrganicCat extends Cat implements Organic {
 
 	public OrganicCat(String petName, int health, int hunger, int thirst, int happiness, int cleanliness) {
 		super(petName, health);
-
 	}
 
 	int hunger = 0;

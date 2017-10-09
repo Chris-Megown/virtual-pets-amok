@@ -13,7 +13,7 @@ public class TestingBasicProcedures {
 	public void shouldMakeAVirtualPet() {
 
 		// import virtual pet at some point for this BS
-		NewVirtualPet underTest = new NewVirtualPet(null, null);
+		NewVirtualPet underTest = new NewVirtualPet(null, 0);
 
 		assertNotNull(underTest);
 	}
@@ -22,7 +22,8 @@ public class TestingBasicProcedures {
 
 	public void shouldMakeAnOrganicDog() {
 
-		OrganicDog underTest = new OrganicDog(null, null);
+		OrganicDog underTest = new OrganicDog(null, 0, 0, 0, 0, 0);
+
 		assertNotNull(underTest);
 
 	}
@@ -31,13 +32,13 @@ public class TestingBasicProcedures {
 
 	public void shouldBeAbleToWalkOrganicDog() {
 
-		Dog underTest = new OrganicDog(null, null);
+		OrganicDog underTest = new OrganicDog(null, 0, 0, 0, 0, 0);
 
 		underTest.walk();
 
 		int walking = underTest.getHappiness();
-		
-		assertEquals(20, walking);
+
+		assertEquals(55, walking);
 
 	}
 
@@ -45,7 +46,7 @@ public class TestingBasicProcedures {
 
 	public void shouldMakeARobotDog() {
 
-		RobotDog underTest = new RobotDog(null, null);
+		RobotDog underTest = new RobotDog(null, 0);
 
 		assertNotNull(underTest);
 
@@ -55,7 +56,7 @@ public class TestingBasicProcedures {
 
 	public void shouldMakeRobotDogExtendsDog() {
 
-		Dog underTest = new RobotDog(null, null);
+		Dog underTest = new RobotDog(null, 0);
 
 		assertNotNull(underTest);
 
@@ -65,7 +66,7 @@ public class TestingBasicProcedures {
 
 	public void shouldMakeOrganicDogExtendsDog() {
 
-		Dog underTest = new OrganicDog(null, null);
+		Dog underTest = new OrganicDog(null, 0, 0, 0, 0, 0);
 
 		assertNotNull(underTest);
 	}
@@ -74,7 +75,7 @@ public class TestingBasicProcedures {
 
 	public void shouldMakeAnOrganicCat() {
 
-		OrganicCat underTest = new OrganicCat(null, null);
+		OrganicCat underTest = new OrganicCat(null, 0, 0, 0, 0, 0);
 
 		assertNotNull(underTest);
 
@@ -84,7 +85,7 @@ public class TestingBasicProcedures {
 
 	public void shouldMakeARobotCat() {
 
-		RobotCat underTest = new RobotCat(null, null);
+		RobotCat underTest = new RobotCat(null, 0);
 
 		assertNotNull(underTest);
 
@@ -94,7 +95,7 @@ public class TestingBasicProcedures {
 
 	public void shouldMakeRobotCatExtendsCat() {
 
-		Cat underTest = new RobotCat(null, null);
+		Cat underTest = new RobotCat(null, 0);
 
 		assertNotNull(underTest);
 
@@ -104,7 +105,7 @@ public class TestingBasicProcedures {
 
 	public void shouldMakeOrganicCatExtendsCat() {
 
-		Cat underTest = new OrganicCat(null, null);
+		Cat underTest = new OrganicCat(null, 0, 0, 0, 0, 0);
 
 		assertNotNull(underTest);
 	}
